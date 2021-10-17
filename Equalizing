@@ -1,0 +1,113 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+
+{
+
+	int i,n,c=0,j,a[10],f[10],d,t,sc;	cin >> n;
+
+	for(i=0;i<n;i++)
+
+	{
+
+		cin >> a[i];
+
+		f[i]=0;
+
+	}
+
+	cin >> d >> t;
+
+	// logic for equalizing array
+
+	there:
+
+	sc=0;
+
+	for(i=0;i<n;i++)
+
+	{
+
+		if(sc<a[i])
+
+		{
+
+			sc=a[i];
+
+		}
+
+	}
+
+	for(i=0;i<n;i++)
+
+	{
+
+		if(sc==a[i])
+
+		{
+
+			a[i]=a[i]/d;
+
+			c++;
+
+		}
+
+	}
+
+	for(i=0;i<n;i++)
+
+	{
+
+		for(j=0;j<n;j++)
+
+		{
+
+			if(a[i]==a[j])
+
+			{
+
+				f[i]++;
+
+			}
+
+		}
+
+	}
+
+	sc=0;
+
+	for(i=0;i<n;i++)
+
+	{
+
+		if(sc<f[i])
+
+		{
+
+			sc=f[i];
+
+		}
+
+	}
+
+	if(sc==t)
+
+	{
+
+		cout << c;
+
+	}
+
+	else
+
+	{
+
+		goto there;
+
+	}
+
+	return 0;
+
+}
